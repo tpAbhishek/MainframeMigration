@@ -44,13 +44,13 @@ The business required a modern integration platform that could provide secure, s
 - Due to dependencies on the code base and processes, enhancements were kept out of scope.
 ---
 
-# Solution
+# Solution Approach
+
+<img src="./Images/Approach.png?&style=for-the-badge&logoColor=white" />
 <img src="./Images/appFamily.png?&style=for-the-badge&logoColor=white" />
 <img src="./Images/legacyFunctional.png?&style=for-the-badge&logoColor=white" />
 
 ---
-
-# Solution Approach
 
 - **Data Layer Migration:** The data layer, initially in mainframe file systems, was migrated to a relational database (SQL Server). Relationships were derived from the files and modeled into the new database. This migration involved extracting and loading data into new tables using SSIS packages.
 - **Processing Layer Migration:** The processing part/file system was migrated to .NET. Batch jobs, which were part of the mainframe code, were migrated to SSIS packages, stored procedures, .NET, and mixed combinations. The entire migration was done manually without using any tools, as L wanted more control over the migration process.
