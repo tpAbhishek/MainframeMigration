@@ -44,13 +44,9 @@ The business required a modern integration platform that could provide secure, s
 - Due to dependencies on the code base and processes, enhancements were kept out of scope.
 ---
 
-# Solution Architecture
-
-A cloud-native, event-driven platform was designed using Microsoft Azure services.
-
-## High-Level Workflow
-
-<img src="./Images/EnterpriseEventGateway.png?&style=for-the-badge&logoColor=white" />
+# Solution
+<img src="./Images/appFamily.png?&style=for-the-badge&logoColor=white" />
+<img src="./Images/legacyFunctional.png?&style=for-the-badge&logoColor=white" />
 
 ---
 
