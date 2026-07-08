@@ -23,6 +23,8 @@ The client wanted to decommission existing I&A (Insurance and Accounting) core s
 - Legacy Batch processing and Business Logic - Retail/Commercial Business
 - Include real-time integration capabilities/REST - Retail/Commercial Business
 
+---
+
 # Business Challenges
 - Legacy Technology
 - Increased infrastructure costs
@@ -33,6 +35,8 @@ The client wanted to decommission existing I&A (Insurance and Accounting) core s
 
 The business required a modern integration platform that could provide secure, scalable, near real-time notifications while reducing unnecessary system interactions.
 
+---
+
 # Technical Challenges & Risk Mitigation
 
 - Unavailability of mainframe documentation.
@@ -42,6 +46,7 @@ The business required a modern integration platform that could provide secure, s
 - To mitigate business risk involved in migration to .NET platform, a fallback system was designed which also included reverse migration
 - There were a lot of data dependencies preventing iterative approach, hence big bang was chosen
 - Due to dependencies on the code base and processes, enhancements were kept out of scope.
+  
 ---
 
 # Solution Approach
