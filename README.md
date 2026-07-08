@@ -1,10 +1,7 @@
-# 🌐 Mainframe Migration
-Mainframe Migration to Microsoft Tech Stack
-
 ---
 
 ## About The Client
-UK’s No. 1 premium lending company that operating in UK & Ireland with 2mn+ customers across both personal and business use. The client has helped millions of businesses and individuals pay for their insurance or other financial commitments school fees, premium memberships upfront and spread the costs over instalments, instead of paying the whole premium up front since 1988. The client also provides the finance to pay annual costs such as professional fees, membership subscriptions, commercial service charges and school fees
+UK’s No. 1 premium lending company that is operating in UK & Ireland with 2mn+ customers across both personal and business use. The client has helped millions of businesses and individuals pay for their insurance or other financial commitments school fees, premium memberships, professional fees, membership subscriptions, commercial service charges upfront and spread the costs over instalments, instead of paying the whole premium up front since 1988.
 
 ---
 
@@ -16,12 +13,12 @@ The client wanted to decommission existing I&A (Insurance and Accounting) core s
 
 # Scope for Modernization:
 
-I&A Recourse - Retail Business
-I&A Non-recourse - Commercial Business
-I&A Interactive - Retail/Commercial Business
-PDF/XML - Commercial Business 
-Legacy Batch processing and Business Logic - Retail/Commercial Business
-Include real-time integration capabilities - Retail/Commercial Business
+- Retail Business - Web Product for Partners
+- Commercial Business - Web Product for Partners
+- Retail/Commercial Business - Web Product for Business Operations
+- Commercial Business - Legacy/SOAP Integrations
+- Legacy Batch processing and Business Logic - Retail/Commercial Business
+- Include real-time integration capabilities/REST - Retail/Commercial Business
 
 # Business Challenges
 - Legacy Technology
@@ -54,7 +51,18 @@ A cloud-native, event-driven platform was designed using Microsoft Azure service
 
 ---
 
-# Platform Modules
+# Solution Approach
+
+- **Data Layer Migration:** The data layer, initially in mainframe file systems, was migrated to a relational database (SQL Server). Relationships were derived from the files and modeled into the new database. This migration involved extracting and loading data into new tables using SSIS packages.
+- **Processing Layer Migration:** The processing part/file system was migrated to .NET. Batch jobs, which were part of the mainframe code, were migrated to SSIS packages, stored procedures, .NET, and mixed combinations. The entire migration was done manually without using any tools, as L wanted more control over the migration process.
+- **Reverse Migration Scripts:** Reverse migration scripts were designed for converting RDBMS to flat files for a fallback option. This ensured that in case of total failure, they could switch back to the mainframe system.
+- **Code Splitting:** The code was split into two parts: front-end system code and business logic code. Multiple parallel streams ran the as-is code conversion from the mainframe to .NET while keeping the mainframe code inefficiencies to reduce risk and testing effort. Enhancements were planned for later to minimize risk. Streams were divided based on the front end, backend, and business lines (retail, commercial).
+- **Front End Translation:** Legacy screens were migrated to web-based front end using angular.js and backbone.js. These screens were interfaced with service layer.
+- **Business Layer Translation:** The business layer of the mainframe was translated into a service layer. Due to manual migration, there was uncertainty about where the business logic would reside. Hence, some business logic was also incorporated into the front end, which was acceptable.
+
+- **Testing:** Testing was done in 6-7 parallel streams. Individual environments were spun up for each stream. Both old and new systems ran in parallel for testing purposes, and reverse migration scripts were utilized for testing. With output files reverse migrated, these were compared with flat files of the mainframe system. Integration testing was also done. Testing included manual key-in to both systems, which was automated wherever possible using automation anywhere.
+- **Go-live:** Once satisfied with the results, the business moved to the new system in a big bang approach. The entire data was migrated to the new system in less than 2 days. In parallel, the fallback system kept running for a month and was turned off post that. Data was translated to the fallback system overnight. In 2 months, the entire mainframe system was sunset.
+- **Timelines & Teams:** The project started in 2014 and went live in 2016 (2.5 years). The project was executed in right-shore staffing where key technical resources and business analysts were onshore, and rest of the code conversion took place offshore. Project initially started with 50 resources and eventually ramped up to 200 resources. From the client side, project managers and technical architects were involved in the review.
 
 ---
 
