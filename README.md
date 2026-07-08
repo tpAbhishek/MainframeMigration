@@ -1,4 +1,4 @@
-## Mainframe Migration
+# Mainframe Migration
 Mainframe Migration to Microsoft Tech Stack
 
 ---
@@ -14,7 +14,7 @@ The client wanted to decommission existing I&A (Insurance and Accounting) core s
 
 ---
 
-# Scope for Modernization:
+## Scope for Modernization:
 
 - Retail Business - Web Product for Partners
 - Commercial Business - Web Product for Partners
@@ -25,7 +25,7 @@ The client wanted to decommission existing I&A (Insurance and Accounting) core s
 
 ---
 
-# Business Challenges
+## Business Challenges
 - Legacy Technology
 - Increased infrastructure costs
 - Slow customer response times
@@ -37,7 +37,7 @@ The business required a modern integration platform that could provide secure, s
 
 ---
 
-# Technical Challenges & Risk Mitigation
+## Technical Challenges & Risk Mitigation
 
 - Unavailability of mainframe documentation.
 - No tools were allowed for modernization due to business controls.
@@ -49,7 +49,7 @@ The business required a modern integration platform that could provide secure, s
   
 ---
 
-# Solution Approach
+## Solution Approach
 
 <img src="./Images/Approach.png?&style=for-the-badge&logoColor=white" />
 <img src="./Images/appFamily.png?&style=for-the-badge&logoColor=white" />
@@ -65,7 +65,7 @@ The business required a modern integration platform that could provide secure, s
 
 ---
 
-# Delivery Approach
+## Delivery Approach
 
 - **Data Layer Migration:** The data layer, initially in mainframe file systems, was migrated to a relational database (SQL Server). Relationships were derived from the files and modeled into the new database. This migration involved extracting and loading data into new tables using SSIS packages.
 - **Processing Layer Migration:** The processing part/file system was migrated to .NET. Batch jobs, which were part of the mainframe code, were migrated to SSIS packages, stored procedures, .NET, and mixed combinations. The entire migration was done manually without using any tools, as L wanted more control over the migration process.
@@ -80,7 +80,7 @@ The business required a modern integration platform that could provide secure, s
 
 ---
 
-# Architecture Principles
+## Architecture Principles
 
 - Event-Driven Architecture
 - API-First Design
@@ -93,7 +93,7 @@ The business required a modern integration platform that could provide secure, s
 
 ---
 
-# Technology Stack
+## Technology Stack
 
 | Layer | Technology |
 |--------|------------|
@@ -108,7 +108,7 @@ The business required a modern integration platform that could provide secure, s
 
 ---
 
-# Resilience & Reliability
+## Resilience & Reliability
 
 The platform was designed following cloud-native resilience patterns.
 
@@ -127,7 +127,7 @@ Implemented capabilities included:
 
 ---
 
-# Observability
+## Observability
 
 Azure Application Insights was implemented to provide operational visibility across the platform.
 
@@ -144,7 +144,7 @@ Telemetry captured included:
 
 ---
 
-# My Responsibilities
+## My Responsibilities
 
 As the **Lead Solution Architect**, I was responsible for:
 
@@ -162,7 +162,7 @@ As the **Lead Solution Architect**, I was responsible for:
 
 ---
 
-# Business Outcomes
+## Business Outcomes
 
 ✅ Decommissioned Automation Anywhere and Oracle (cost)
 
@@ -190,7 +190,7 @@ As the **Lead Solution Architect**, I was responsible for:
 
 ---
 
-# Key Learnings
+## Key Learnings
 
 This project demonstrated how event-driven integration platforms can significantly improve scalability, customer experience, and operational efficiency.
 
@@ -203,7 +203,7 @@ Key architectural learnings included:
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 - Solution Architecture
 - Enterprise Integration
